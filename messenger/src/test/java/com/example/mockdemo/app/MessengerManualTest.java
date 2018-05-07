@@ -34,6 +34,12 @@ public class MessengerManualTest {
 		assertEquals(1, actual);
 	}
 	
+	@Test
+	public void testConnection_ShouldReturn0WhenServerIsValid() {
+		int actual = messenger.testConnection(VALID_SERVER);
+		assertEquals(0, actual);
+	}
+	
 	@AfterEach
 	public void tearDown() {
 		messenger = null;
