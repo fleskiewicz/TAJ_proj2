@@ -58,6 +58,12 @@ public class MessengerManualTest {
 		assertSame(2, actual);
 	}
 	
+	@Test
+	public void sendMessage_ShouldReturn2WhenMessageIsEmptyString() {
+		int actual = messenger.sendMessage(VALID_SERVER, "");
+		assertTrue(actual == 2);
+	}
+	
 	@AfterEach
 	public void tearDown() {
 		messenger = null;
