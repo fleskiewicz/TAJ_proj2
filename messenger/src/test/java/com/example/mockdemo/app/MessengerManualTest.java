@@ -52,6 +52,11 @@ public class MessengerManualTest {
 		assertThat(actual, is(1));
 	}
 	
+	@Test
+	public void sendMessage_ShouldReturn2WhenMessageIsTooShort() {
+		int actual = messenger.sendMessage(VALID_SERVER, INVALID_MESSAGE);
+		assertSame(2, actual);
+	}
 	
 	@AfterEach
 	public void tearDown() {
