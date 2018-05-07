@@ -1,5 +1,5 @@
 language: java
 jdk: oraclejdk8
 sudo: false
-before-script: cd messenger
+before_script: cd messenger
 script: mvn clean test
