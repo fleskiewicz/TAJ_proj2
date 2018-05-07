@@ -28,6 +28,12 @@ public class MessengerManualTest {
 		messenger = new Messenger(msgSrvMock);
 	}
 	
+	@Test
+	public void testConnection_ShouldReturn1WhenServerIsInvalid() {
+		int actual = messenger.testConnection(INVALID_SERVER);
+		assertEquals(1, actual);
+	}
+	
 	@AfterEach
 	public void tearDown() {
 		messenger = null;
