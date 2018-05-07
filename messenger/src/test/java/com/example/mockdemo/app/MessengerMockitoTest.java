@@ -74,27 +74,27 @@ public class MessengerMockitoTest {
 	}
 	
 	@Test
-	public void sendMessage_ShouldReturn2WhenMessageIsEmptyString() throws MalformedRecipientException {
-		when(msgSrvMock.send(VALID_SERVER, "")).thenThrow(MalformedRecipientException.class);
-		int actual = messenger.sendMessage(VALID_SERVER, "");
+	public void sendMessage_ShouldReturn2WhenMessageIsNull() throws MalformedRecipientException {
+		when(msgSrvMock.send(VALID_SERVER, null)).thenThrow(MalformedRecipientException.class);
+		int actual = messenger.sendMessage(VALID_SERVER, null);
 		assertTrue(actual == 2);
-		verify(msgSrvMock).send(VALID_SERVER, "");
+		verify(msgSrvMock).send(VALID_SERVER, null);
 	}
 	
 	@Test
-	public void sendMessage_ShouldReturn2WhenServerIsEmptyString() throws MalformedRecipientException {
-		when(msgSrvMock.send("", VALID_MESSAGE)).thenThrow(MalformedRecipientException.class);
-		int actual = messenger.sendMessage("", VALID_MESSAGE);
+	public void sendMessage_ShouldReturn2WhenServerIsNull() throws MalformedRecipientException {
+		when(msgSrvMock.send(null, VALID_MESSAGE)).thenThrow(MalformedRecipientException.class);
+		int actual = messenger.sendMessage(null, VALID_MESSAGE);
 		assertFalse(actual != 2);
-		verify(msgSrvMock).send("", VALID_MESSAGE);
+		verify(msgSrvMock).send(null, VALID_MESSAGE);
 	}
 	
 	@Test
-	public void sendMessage_ShouldReturn2WhenBothServerAndMessageAreEmptyStrings() throws MalformedRecipientException {
-		when(msgSrvMock.send("", "")).thenThrow(MalformedRecipientException.class);
-		int actual = messenger.sendMessage("", "");
+	public void sendMessage_ShouldReturn2WhenBothServerAndMessageAreNull() throws MalformedRecipientException {
+		when(msgSrvMock.send(null, null)).thenThrow(MalformedRecipientException.class);
+		int actual = messenger.sendMessage(null, null);
 		assertEquals(2, actual);
-		verify(msgSrvMock).send("", "");
+		verify(msgSrvMock).send(null, null);
 	}
 
 	@After
