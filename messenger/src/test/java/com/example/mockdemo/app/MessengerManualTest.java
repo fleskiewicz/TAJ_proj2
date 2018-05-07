@@ -40,12 +40,18 @@ public class MessengerManualTest {
 		assertEquals(0, actual);
 	}
 	
-	
 	@Test
 	public void sendMessage_ShouldReturn0WhenMessageIsProperlySent() {
 		int actual = messenger.sendMessage(VALID_SERVER, VALID_MESSAGE);
 		assertEquals(0, actual);
 	}
+	
+	@Test
+	public void sendMessage_ShouldReturn1WhenServerIsNotAccepted() {
+		int actual = messenger.sendMessage(INVALID_SERVER, VALID_MESSAGE);
+		assertThat(actual, is(1));
+	}
+	
 	
 	@AfterEach
 	public void tearDown() {
