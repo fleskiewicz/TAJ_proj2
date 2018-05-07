@@ -1,5 +1,7 @@
 [![Build Status](https://travis-ci.com/TestowanieJAVA2017-2018Gr2/projekt2-fleskiewicz.svg?token=fGtEs748u6Avpzye8teM&branch=master)](https://travis-ci.com/TestowanieJAVA2017-2018Gr2/projekt2-fleskiewicz)
 
+[![BCH compliance](https://bettercodehub.com/edge/badge/fleskiewicz/TAJ_proj2?branch=master)](https://bettercodehub.com/)
+
 # Testowanie aplikacji JAVA 2017-2018
 ## Projekt 2 (Maven, JUnit oraz atrapy) 
 
