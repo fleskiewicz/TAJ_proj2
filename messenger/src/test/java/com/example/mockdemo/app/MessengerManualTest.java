@@ -64,6 +64,12 @@ public class MessengerManualTest {
 		assertTrue(actual == 2);
 	}
 	
+	@Test
+	public void sendMessage_ShouldReturn2WhenServerIsEmptyString() {
+		int actual = messenger.sendMessage("", VALID_MESSAGE);
+		assertFalse(actual != 2);
+	}
+	
 	@AfterEach
 	public void tearDown() {
 		messenger = null;
